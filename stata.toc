@@ -1,0 +1,4 @@
+v 3
+d preamble: A program to simplify Stata preambles.
+d
+d Marshall Garland, Gibson Consulting, Austin, TX. 

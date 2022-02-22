@@ -1,0 +1,18 @@
+d 'preamble': a program for counting variables in a list in Stata.
+d
+d preamble is a program to simplify the creation of Stata preambles.
+d
+d KW: Data management
+d KW: Preambles
+d KW: Macros
+d
+d Requires: Stata version 9.2
+d
+d Distribution-Date: 202105
+d
+d Author: Marshall Garland
+d	  Research Scientist,
+d	  Gibson Consulting Group
+d Author Email : mgarland @t gibsonconsult [dot] com
+d
+f preamble.ado
