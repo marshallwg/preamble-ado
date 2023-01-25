@@ -1,10 +1,11 @@
-//Created by mwg 7/2/2018
-//UPDATED 8/28 TO DETECT OS
-//UPDATED 1/7/2021 TO ADD ADDITIONAL SEED OPTION
-//UPDATED 1/15/2021 TO ADD CPATH OPTIONS
-//UPDATED 4/29/2021 to update base2 and sub2 path options
-//Updated 8/31/2021 to fix log issue
-//Updated to Github paths
+*!Created by mwg 7/2/2018
+*!UPDATED 8/28 TO DETECT OS
+*!UPDATED 1/7/2021 TO ADD ADDITIONAL SEED OPTION
+*!UPDATED 1/15/2021 TO ADD CPATH OPTIONS
+*!UPDATED 4/29/2021 to update base2 and sub2 path options
+*!Updated 8/31/2021 to fix log issue
+*!Updated to Github paths
+*!Updated to drop some leftovers from Gibson
 capture program drop preamble
 program define preamble
 	version 9.2
@@ -68,14 +69,11 @@ if (!mi("`logname'") | !mi("`logpath'")) & mi("`log'") {
 		global rootfolder="`rootfolder'//"
 		local sf="`rootfolder'//`clientfolder'"
 		global sf="`rootfolder'//`clientfolder'"	
-		global client="/Volumes/shared/Client//"
 	}	
 	else {
 		global rootfolder="/`rootfolder'//"	
 		local sf="`rootfolder'//`clientfolder'"
 		global sf="`rootfolder'//`clientfolder'"	
-		global client="S:/Client//"		
-		global chome="C:/data"
 	}
 
 //2. Creating folders and globals
