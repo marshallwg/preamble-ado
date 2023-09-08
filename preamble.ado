@@ -6,6 +6,7 @@
 *!Updated 8/31/2021 to fix log issue
 *!Updated to Github paths
 *!Updated to drop some leftovers from Gibson
+*!Updated 8Sep2023 to add clear all and macro drop all options
 capture program drop preamble
 program define preamble
 	version 9.2
@@ -28,6 +29,7 @@ program define preamble
 		SEED(numlist int >0 max=1) ///
 		DISCARD ///
 		TRACE(string) ///
+		MACRODrop ///
 		]
 	
 //0.0 Discard
@@ -37,7 +39,7 @@ program define preamble
 	
 //0.1. Clear
 	if "`clear'"!="" {
-		clear
+		clear *
 	}
 	
 //0.2. installing dependencies
@@ -56,7 +58,12 @@ if (!mi("`logname'") | !mi("`logpath'")) & mi("`log'") {
 	di as error "Must specify -log- option if passing a log path or log name."
 	exit 170
 }
-	
+
+//0.4. Clear
+	if "`macrodrop'"!="" {
+		macro drop _all
+	}
+
 //1. Checking for OS to determine base path
 	//confirming rootf exists
 	confirmdir `"`rootfolder'"'
