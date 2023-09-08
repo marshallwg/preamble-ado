@@ -9,7 +9,7 @@
 *!Updated 8Sep2023 to add clear all and macro drop all options
 capture program drop preamble
 program define preamble
-	version 9.2
+	version 10
 	syntax [anything], ///
 		ROOTFolder(string) ///
 		CLIENTFolder(string) ///
@@ -39,7 +39,7 @@ program define preamble
 	
 //0.1. Clear
 	if "`clear'"!="" {
-		clear *
+		clear all
 	}
 	
 //0.2. installing dependencies
