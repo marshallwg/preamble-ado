@@ -1,0 +1,5 @@
+# Ignore the _testing subfolder
+_testing/
+
+# Ignore macOS .DS_Store files
+.DS_Store
