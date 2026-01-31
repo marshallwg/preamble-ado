@@ -31,7 +31,7 @@ program define preamble
 		SEED(numlist int >0 max=1) ///
 		DISCARD ///
 		TRACE(string) ///
-		INCLUdes(strin asis) ///
+		INCLUdes(string asis) ///
 		]
 	
 //0.0 Discard
@@ -82,12 +82,6 @@ if (!mi("`logname'") | !mi("`logpath'")) & mi("`log'") {
 		global sf="`rootfolder'//`clientfolder'"	
 	}
 
-// 1.1 Paramaters sourced from an includes file
-if !mi("`includes'") {
-	foreach t in `includes' {
-		qui run `t'
-	}
-}
 
 // Other locals conditioned on values in the includes control file
 
@@ -211,4 +205,12 @@ if !mi("`includes'") {
 	if "`trace'"!="" {
 		set trace `trace'
 	}
+
+// 12 Paramaters sourced from an includes file
+if !mi(`includes') {
+	foreach t in `includes' {
+		qui include "`t'"
+	}
+}
+
 end
